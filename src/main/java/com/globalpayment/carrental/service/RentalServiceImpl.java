@@ -1,6 +1,7 @@
 package com.globalpayment.carrental.service;
 
 import com.globalpayment.carrental.model.Rental;
+import com.globalpayment.carrental.payload.RentalDto;
 import org.springframework.beans.factory.annotation.Value;
 
 import java.math.BigDecimal;
@@ -13,17 +14,17 @@ import java.util.List;
 public class RentalServiceImpl implements RentalService {
 
     @Override
-    public List<Rental> getAll() {
+    public List<RentalDto> getAll() {
         return null;
     }
 
     @Override
-    public Rental getById(BigInteger id) {
+    public RentalDto getById(BigInteger id) {
         return null;
     }
 
     @Override
-    public Rental update(Rental rental) {
+    public RentalDto update(RentalDto rental) {
         return null;
     }
 
@@ -33,7 +34,7 @@ public class RentalServiceImpl implements RentalService {
     }
 
     @Override
-    public BigDecimal calculateRentalPrice(Rental rental) {
+    public BigDecimal calculateRentalPrice(RentalDto rental) {
         BigDecimal price = new BigDecimal(0.0);
 
         return price;
@@ -44,7 +45,7 @@ public class RentalServiceImpl implements RentalService {
         price = rental.getCar().getType().getPrice().multiply(BigDecimal.valueOf(daysBetween));
         if(LocalDate.now().isAfter(rental.getRentalFrom())){
             daysBetween = ChronoUnit.DAYS.between(rental.getRentalFrom(), rental.getRentalTill());
-            premiumOverdue
+          //  premiumOverdue
         }
         return price;
     }

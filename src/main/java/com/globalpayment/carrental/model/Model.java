@@ -19,5 +19,6 @@ public class Model implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private BigInteger id;
     private String name;
+    @Column(name = "yearModel")
     private LocalDate year;
 }
